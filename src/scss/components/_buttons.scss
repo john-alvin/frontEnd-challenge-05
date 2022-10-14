@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.container-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: $dark-blue-secondary;
+  padding: 1.2rem;
+  border-radius: 10px;
+
+  button {
+    cursor: pointer;
+    color: $grayish-blue;
+    border: none;
+    background-color: $light-grayish;
+    padding: 0.5rem 1rem;
+    font-weight: $font-bold;
+    font-size: 2rem;
+    border-radius: 10px;
+    box-shadow: inset 0 -5px 0 $grayish-orange;
+  }
+
+  .del {
+    background-color: $desaturated-blue;
+    color: $white;
+    box-shadow: inset 0 -5px 0 $blue-shadow;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+  .reset {
+    grid-column: 1/3;
+    color: $white;
+    box-shadow: inset 0 -5px 0 $blue-shadow;
+    text-transform: uppercase;
+    background-color: $desaturated-blue;
+    font-size: 1.3rem;
+  }
+  .equal {
+    grid-column: 3 / -1;
+    color: $white;
+    background-color: $red;
+    box-shadow: inset 0 -5px 0 $dark-red;
+  }
+}

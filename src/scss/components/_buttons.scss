@@ -42,3 +42,30 @@
     box-shadow: inset 0 -5px 0 $dark-red;
   }
 }
+// toogle theme
+
+.toggle {
+  display: flex;
+  background-color: $dark-blue-secondary;
+  padding: 4px;
+  border-radius: 50px;
+  width: 55px;
+  justify-content: center;
+
+  input {
+    height: 15px;
+    width: 15px;
+    appearance: none;
+    background-color: $red;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  input:hover {
+    cursor: pointer;
+  }
+
+  #one {
+    opacity: 1;
+  }
+}

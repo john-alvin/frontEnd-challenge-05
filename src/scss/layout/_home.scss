@@ -14,3 +14,35 @@
     text-align: end;
   }
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  font-size: 2rem;
+  padding: 0.2rem;
+
+  .aside {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+
+    .theme {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .number {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      gap: 10px;
+      top: -60%;
+      right: 8%;
+      font-size: 0.7rem;
+    }
+  }
+}

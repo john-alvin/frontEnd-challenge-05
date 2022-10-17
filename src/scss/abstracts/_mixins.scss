@@ -9,3 +9,8 @@
     @content;
   }
 }
+
+@mixin background-main($color-main, $color) {
+  color: $color;
+  background-color: $color-main;
+}

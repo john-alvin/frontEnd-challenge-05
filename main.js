@@ -14,3 +14,10 @@ arr.forEach((element, index) => {
       });
   });
 });
+
+const body = document.querySelector("body");
+const title = document.querySelector(".title");
+
+title.addEventListener("click", () => {
+  body.classList.add("theme-01");
+});

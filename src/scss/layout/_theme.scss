@@ -1,0 +1,37 @@
+@use "../abstracts" as *;
+
+.theme-01 {
+  --main-background: hsl(0, 0%, 90%);
+  --keypad-background: hsl(0, 5%, 81%); //toggle-bg
+  --screen-background: hsl(0, 0%, 93%);
+
+  //KEYS
+  --key-bg: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --key-bg-02: hsl(25, 98%, 40%);
+  --key-shadow-02: hsl(25, 99%, 27%);
+  --buttons-bg: hsl(45, 7%, 89%);
+  --key-shadow-03: hsl(35, 11%, 61%);
+
+  // TEXT
+  --text-color: hsl(0, 0%, 100%);
+  --text-white: hsl(60, 10%, 19%);
+}
+
+.theme-02 {
+  --main-background: hsl(268, 75%, 9%);
+  --keypad-background: hsl(268, 71%, 12%); //toggle-bg
+  --screen-background: hsl(0, 0%, 93%);
+
+  //KEYS
+  --key-bg: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --key-bg-02: hsl(176, 100%, 44%);
+  --key-shadow-02: hsl(177, 92%, 70%);
+  --buttons-bg: hsl(268, 47%, 21%);
+  --key-shadow-03: hsl(290, 70%, 36%);
+
+  // TEXT
+  --text-color: hsl(52, 100%, 62%);
+  --text-white: hsl(0, 0%, 100%);
+}

@@ -14,14 +14,15 @@
   --key-shadow-03: hsl(35, 11%, 61%);
 
   // TEXT
-  --text-color: hsl(0, 0%, 100%);
-  --text-white: hsl(60, 10%, 19%);
+  --text-color-01: hsl(60, 10%, 19%);
+  --text-color-02: hsl(60, 10%, 19%);
+  --text-color-03: hsl(0, 0%, 100%);
 }
 
 .theme-02 {
   --main-background: hsl(268, 75%, 9%);
   --keypad-background: hsl(268, 71%, 12%); //toggle-bg
-  --screen-background: hsl(0, 0%, 93%);
+  --screen-background: hsl(268, 71%, 12%);
 
   //KEYS
   --key-bg: hsl(281, 89%, 26%);
@@ -32,6 +33,7 @@
   --key-shadow-03: hsl(290, 70%, 36%);
 
   // TEXT
-  --text-color: hsl(52, 100%, 62%);
-  --text-white: hsl(0, 0%, 100%);
+  --text-color-01: hsl(52, 100%, 62%);
+  --text-color-02: hsl(52, 100%, 62%);
+  --text-color-03: hsl(268, 75%, 9%);
 }

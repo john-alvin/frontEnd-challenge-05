@@ -20,8 +20,9 @@ body {
   --key-shadow-03: hsl(28, 16%, 65%);
 
   // TEXT
-  --text-color: hsl(221, 14%, 31%);
-  --text-white: hsl(0, 0%, 100%);
+  --text-color-01: hsl(0, 0%, 100%);
+  --text-color-02: hsl(221, 14%, 31%);
+  --text-color-03: hsl(0, 0%, 100%);
 
   background-color: var(--main-background);
   font-family: $font-main, sans-serif;

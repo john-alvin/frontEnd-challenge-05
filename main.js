@@ -25,3 +25,55 @@ arr.forEach((element, index) => {
       });
   });
 });
+
+const numberButtons = document.querySelectorAll("[data-number]");
+const operation = document.querySelectorAll("[data-operation]");
+const delBtn = document.querySelector("[data-delete]");
+const equalsBtn = document.querySelector("[data-equals]");
+const resetBtn = document.querySelector("[data-reset]");
+const display = document.querySelector("[data-display]");
+
+class calculator {
+  constructor(display) {
+    this.display = display;
+    this.clear();
+  }
+
+  clear() {
+    this.display = "";
+    this.operation = undefined;
+  }
+
+  delete() {}
+
+  appendNumber(number) {
+    if (number === "." && this.display.includes(".")) return;
+    this.display = this.display.toString() + number.toString();
+  }
+
+  chooseOperation(operation) {
+    this.operation = operation;
+  }
+
+  compute() {}
+
+  updateDisplay() {
+    display.innerHTML = this.display;
+  }
+}
+
+const calc = new calculator(display);
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calc.appendNumber(button.textContent);
+    calc.updateDisplay();
+  });
+});
+
+operation.forEach((button) => {
+  button.addEventListener("click", () => {
+    calc.chooseOperation(button.textContent);
+    calc.updateDisplay();
+  });
+});

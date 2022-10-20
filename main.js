@@ -26,54 +26,33 @@ arr.forEach((element, index) => {
   });
 });
 
-const numberButtons = document.querySelectorAll("[data-number]");
-const operation = document.querySelectorAll("[data-operation]");
-const delBtn = document.querySelector("[data-delete]");
-const equalsBtn = document.querySelector("[data-equals]");
-const resetBtn = document.querySelector("[data-reset]");
-const display = document.querySelector("[data-display]");
+const keys = document.querySelector(".container-buttons");
+const display = document.querySelector(".calc-display");
+const calc = document.querySelector(".calc-container");
 
-class calculator {
-  constructor(display) {
-    this.display = display;
-    this.clear();
+keys.addEventListener("click", (event) => {
+  if (!event.target.closest("button")) return;
+
+  const key = event.target;
+  const keyValue = key.textContent;
+  const displayValue = display.textContent;
+  const { type } = key.dataset;
+  const { previousKeyType } = calc.dataset;
+
+  if (type === "numbers") {
+    if (displayValue === "0") {
+      display.textContent = keyValue;
+    } else if (previousKeyType === "operator") {
+      display.textContent = keyValue;
+    } else {
+      display.textContent = displayValue + keyValue;
+    }
   }
 
-  clear() {
-    this.display = "";
-    this.operation = undefined;
+  if (type === "operator") {
   }
 
-  delete() {}
-
-  appendNumber(number) {
-    if (number === "." && this.display.includes(".")) return;
-    this.display = this.display.toString() + number.toString();
+  if (type === "equal") {
   }
-
-  chooseOperation(operation) {
-    this.operation = operation;
-  }
-
-  compute() {}
-
-  updateDisplay() {
-    display.innerHTML = this.display;
-  }
-}
-
-const calc = new calculator(display);
-
-numberButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    calc.appendNumber(button.textContent);
-    calc.updateDisplay();
-  });
-});
-
-operation.forEach((button) => {
-  button.addEventListener("click", () => {
-    calc.chooseOperation(button.textContent);
-    calc.updateDisplay();
-  });
+  calc.dataset.previousKeyType = type;
 });

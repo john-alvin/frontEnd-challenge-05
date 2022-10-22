@@ -50,9 +50,30 @@ keys.addEventListener("click", (event) => {
   }
 
   if (type === "operator") {
+    calc.dataset.firstNumber = displayValue;
+    calc.dataset.operator = key.dataset.key;
   }
 
   if (type === "equal") {
+    const firstNumber = calc.dataset.firstNumber;
+    const operator = calc.dataset.operator;
+    const secondNumber = displayValue;
+
+    display.textContent = calculate(firstNumber, operator, secondNumber);
   }
   calc.dataset.previousKeyType = type;
 });
+
+function calculate(firstNumber, operator, secondNumber) {
+  firstNumber = parseInt(firstNumber);
+  secondNumber = parseInt(secondNumber);
+
+  let result = "";
+
+  if (operator === "plus") result = firstNumber + secondNumber;
+  if (operator === "minus") result = firstNumber - secondNumber;
+  if (operator === "times") result = firstNumber * secondNumber;
+  if (operator === "divide") result = firstNumber / secondNumber;
+
+  return result;
+}

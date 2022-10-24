@@ -40,7 +40,7 @@ keys.addEventListener("click", (event) => {
   const { previousKeyType } = calc.dataset;
 
   if (type === "numbers") {
-    if (displayValue === "0") {
+    if (displayValue === "0" || displayValue === ".") {
       display.textContent = keyValue;
     } else if (previousKeyType === "operator") {
       display.textContent = keyValue;

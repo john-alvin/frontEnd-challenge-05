@@ -1,3 +1,5 @@
+"use strict";
+
 let buttons = document.getElementsByClassName("button");
 let arr = [...buttons];
 
@@ -25,3 +27,14 @@ arr.forEach((element, index) => {
       });
   });
 });
+
+const display = document.querySelector(".calc-display");
+const numbers = document.querySelectorAll(".number");
+
+for (let i = 0; i < numbers.length; i++) {
+  numbers[i].addEventListener("click", () => {
+    let result = parseInt(numbers[i].value) + 1;
+
+    display.textContent = result;
+  });
+}

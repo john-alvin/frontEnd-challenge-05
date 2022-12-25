@@ -30,11 +30,17 @@ arr.forEach((element, index) => {
 
 const display = document.querySelector(".calc-display");
 const numbers = document.querySelectorAll(".number");
+const operator = document.querySelectorAll(".operator");
+const btn = document.querySelectorAll("button");
 
-for (let i = 0; i < numbers.length; i++) {
-  numbers[i].addEventListener("click", () => {
-    let result = parseInt(numbers[i].value) + 1;
+const calculator = {
+  displayValue: "0",
+  firstOperand: null,
+  waitingForSecondOperand: false,
+  operator: null,
+};
 
-    display.textContent = result;
-  });
+function updateDisplay() {
+  display.textContent = calculator.displayValue;
 }
+updateDisplay();

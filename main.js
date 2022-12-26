@@ -32,6 +32,7 @@ const display = document.querySelector(".calc-display");
 const numbers = document.querySelectorAll(".number");
 const operator = document.querySelectorAll(".operator");
 const btn = document.querySelectorAll("button");
+const keys = document.querySelector(".container-buttons");
 
 const calculator = {
   displayValue: "0",
@@ -44,3 +45,36 @@ function updateDisplay() {
   display.textContent = calculator.displayValue;
 }
 updateDisplay();
+keys.addEventListener("click", (event) => {
+  const { target } = event;
+
+  if (!target.matches("button")) {
+    return;
+  }
+
+  if (target.classList.contains("operator")) {
+    console.log("operator", target.value);
+    return;
+  }
+  if (target.classList.contains("dot")) {
+    inputDecimal(target.value);
+    updateDisplay();
+  }
+  if (target.classList.contains("reset")) {
+    console.log("clear", target.value);
+    return;
+  }
+  inputDigit(target.value);
+  updateDisplay();
+});
+
+function inputDigit(digit) {
+  const { displayValue } = calculator;
+
+  calculator.displayValue = displayValue === "0" ? digit : displayValue + digit;
+}
+function inputDecimal(dot) {
+  if (!calculator.displayValue.includes(dot)) {
+    calculator.displayValue;
+  }
+}
